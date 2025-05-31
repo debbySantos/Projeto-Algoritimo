@@ -2,6 +2,7 @@
 Este é um jogo simples feito em Java, jogado pelo terminal. O objetivo é encontrar um
 tesouro escondido em um mapa 2D.
 🕹 Como funciona
+
 ● Ao iniciar, você verá um menu com 3 opções:
 ○ 1: Iniciar o jogo
 ○ 2: Créditos
