@@ -15,10 +15,12 @@ public class cacaAoTesouro {
     public static boolean validarEntrada(int valor, int limite) {
         return valor >= 0 && valor <limite;
 }
+    //função para imprimir e rodar o jogo 
+    
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int iniciar;
-
+    // do - while para exibir o menu e reexibir se o usuario digitar uma opção inválida
         do {
             System.out.println("\n<<===============================================================>>"
                     + "\n>> Bem vindo a caça ao tesouro, esperamos que se divirta jogando! <<\n"
@@ -31,14 +33,18 @@ public class cacaAoTesouro {
                     
                         System.out.println("\n>> O jogo começou! <<");
                         int tamanho;
-                        do {
+                       
+                    //do-while para definir o tamanho da matriz do tabuleiro
+                    do {
                             System.out.print("Digite o tamanho do mapa, sendo (5 a 7): ");
                             tamanho = input.nextInt();
                             if (tamanho < 5 || tamanho > 7) {
                                 System.out.println("Tamanho inválido! Digite um número entre 5 e 7.");
                             }
                         } while (tamanho < 5 || tamanho > 7);
-                        
+                       
+                    //definir a posição do tesouro
+                    
                         char[][] mapa = new char[tamanho][tamanho];
                         int[] posicaoTesouro = new int[2];
                         
@@ -59,8 +65,12 @@ public class cacaAoTesouro {
                         System.out.println("\n<== Começou o jogo, boa sorte! ==>\n");
                         mostrarMapa(mapa);
 
+                    //enquanto o usuário tiver tentativas, vai poder digitar linha e coluna. Quando as tentativas acabarem ele perde o jogo
+                    //pegar os inputs do usuario
+                    
                         while (achou == 0 && tentativas < maxTentativas) {
-                                System.out.print("\nEscolha a linha (0 a " + (tamanho - 1) + "): ");
+                            
+                            System.out.print("\nEscolha a linha (0 a " + (tamanho - 1) + "): ");
                                 int linha = input.nextInt();
                             
                                 System.out.print("Escolha a coluna (0 a " + (tamanho - 1) + "): ");
@@ -101,7 +111,7 @@ public class cacaAoTesouro {
                             " nosso grupo é composto por:\n Daniel Augusto Magalhães França \n" +
                             " Débora dos Santos da Silva\n Vanessa Ferreira de Melo Balbino Silva\n Kauan Jota\n\n Esperamos que gostem do jogo ^-^ !");
                     break;
-
+                  //mensagem final exibida ao finalizar o jogo
                 case 3:
                       System.out.println("\n \"███████╗██╗  ███╗ ███╗\n" +
                                             " \"██╔════╝██║ ████╗ ████║\n" +
