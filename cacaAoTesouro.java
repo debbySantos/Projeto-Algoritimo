@@ -58,7 +58,42 @@ public class cacaAoTesouro {
                         
                         System.out.println("\n<== Começou o jogo, boa sorte! ==>\n");
                         mostrarMapa(mapa);
-                    
+
+                        while (achou == 0 && tentativas < maxTentativas) {
+                                System.out.print("\nEscolha a linha (0 a " + (tamanho - 1) + "): ");
+                                int linha = input.nextInt();
+                            
+                                System.out.print("Escolha a coluna (0 a " + (tamanho - 1) + "): ");
+                                int coluna = input.nextInt();
+                            
+                                if (!validarEntrada(linha, tamanho) || !validarEntrada(coluna, tamanho)) {
+                                    System.out.println("Essa posição não existe, não quer tentar outra?");
+                                } else if (mapa[linha][coluna] == '*') {
+                                    System.out.println("Você já tentou essa antes!");
+                                } else {
+                                    tentativas++;
+                            
+                                    if (linha == posicaoTesouro[0] && coluna == posicaoTesouro[1]) {
+                                        mapa[linha][coluna] = 'X';
+                                        achou = 1;
+                                        System.out.println("\nParabéns! Você conseguiu achar o tesouro");
+                                    } else {
+                                        mapa[linha][coluna] = '*';
+                                        System.out.println("Poxa, não foi dessa vez, continue procurando...");
+                                    }
+                                }
+                            
+                                mostrarMapa(mapa);
+                                System.out.println("Suas tentativas agora são: " + (maxTentativas - tentativas));
+                            }
+                            
+                            if (achou == 0) {
+                                System.out.println("<< O tesouro estava na posição: Linha " + posicaoTesouro[0] + ", Coluna " + posicaoTesouro[1] + " >>");
+                                System.out.println("\n<< Você não encontrou o tesouro, mas pode jogar novamente! >>\n");
+                            } else {
+                                System.out.println("\n<< Você encontrou o tesouro em " + tentativas + " tentativas! >>");
+                                System.out.println("Jogo reiniciado, por que não joga novamente?");
+                            }
                     break;
 
                 case 2:
