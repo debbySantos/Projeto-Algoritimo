@@ -28,7 +28,37 @@ public class cacaAoTesouro {
             iniciar = input.nextInt();
             switch (iniciar) {
                 case 1:
-                    // lógica do jogo aqui (vazia por enquanto)
+                    
+                        System.out.println("\n>> O jogo começou! <<");
+                        int tamanho;
+                        do {
+                            System.out.print("Digite o tamanho do mapa, sendo (5 a 7): ");
+                            tamanho = input.nextInt();
+                            if (tamanho < 5 || tamanho > 7) {
+                                System.out.println("Tamanho inválido! Digite um número entre 5 e 7.");
+                            }
+                        } while (tamanho < 5 || tamanho > 7);
+                        
+                        char[][] mapa = new char[tamanho][tamanho];
+                        int[] posicaoTesouro = new int[2];
+                        
+                        for (int i = 0; i < tamanho; i++) {
+                            for (int j = 0; j < tamanho; j++) {
+                                mapa[i][j] = '-';
+                            }
+                        }
+                        
+                        Random rand = new Random();
+                        posicaoTesouro[0] = rand.nextInt(tamanho);
+                        posicaoTesouro[1] = rand.nextInt(tamanho);
+                        
+                        int achou = 0;
+                        int tentativas = 0;
+                        int maxTentativas = 5;
+                        
+                        System.out.println("\n<== Começou o jogo, boa sorte! ==>\n");
+                        mostrarMapa(mapa);
+                    
                     break;
 
                 case 2:
