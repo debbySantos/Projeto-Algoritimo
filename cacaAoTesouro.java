@@ -97,11 +97,18 @@ public class cacaAoTesouro {
                     break;
 
                 case 2:
-                    // créditos aqui (vazio por enquanto)
+                        System.out.println("Opa, tudo bem?, nós somos o grupo 04 e esse é o nosso projeto," +
+                            " nosso grupo é composto por:\n Daniel Augusto Magalhães França \n" +
+                            " Débora dos Santos da Silva\n Vanessa Ferreira de Melo Balbino Silva\n Kauan Jota\n\n Esperamos que gostem do jogo ^-^ !");
                     break;
 
                 case 3:
-                    // encerramento aqui (vazio por enquanto)
+                      System.out.println("\n \"███████╗██╗███╗ ███╗\n" +
+                            " \"██╔════╝██║████╗ ████║\n" +
+                            " \"█████╗ ██║██╔████╔██║\n" +
+                            " \"██╔══╝ ██║██║╚██╔╝██║\n" +
+                            " \"██║ ██║██║ ╚═╝ ██║+\n" +
+                            " \"╚═╝ ╚═╝╚═╝ ╚═╝\n" + "<=============================>\n Obrigado por jogar!\n");
                     break;
 
                 default:
